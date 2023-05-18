@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="EstiloFase2.css">
+        <title>Reto 10: COPIAS DE SEGURIDAD</title>
+        <link rel="icon" type="image/jpg" href="Imagenes/politec.jpg">
+    </head>
+    <header>
+        <img src="Imagenes/Logo pw.png"alt="Politecnics">
+        <nav class="nav">
+            <ul class="menuhorizontal">
+                <li><a href="Labdoo.html">Menú principal</a></li>
+                <li>
+                    <a>Fase 1</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 1.html">Reto 1</a></li>
+                        <li><a href="Reto 2.html">Reto 2</a></li>
+                        <li><a href="Reto 3.html">Reto 3</a></li>
+                        <li><a href="Reto 4.html">Reto 4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Fase 2</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 5.html">Reto 5</a></li>
+                        <li><a href="Reto 6.html">Reto 6</a></li>
+                        <li><a href="Reto 7.1.html">Reto 7.1</a></li>
+                        <li><a href="Reto 7.2.html">Reto 7.2</a></li>
+                        <li><a href="Reto 8.html">Reto 8</a></li>
+                        <li><a href="Reto 9.html">Reto 9</a></li>
+                        <li><a href="Reto 10.html">Reto 10</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Fase 3</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 11.html">Reto 11</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <h1>Reto 10: Copias de seguridad</h1>
+        <div class="text">
+            <h3>1. Copias de seguridad en Ubuntu</h3>
+            <p><strong>1.</strong>Para empezar a realizar las copias en Ubuntu primero necesitaremos saber cuál va a ser la carpeta de las que se harán las copias y la carpetas donde se guardarán, estas serán la carpeta “Fase2” que es donde se encuentran todos los archivos y las copias se guardarán en “backups”:</p>
+            <img class="center" src="Imagenes/CS1.PNG" width="700px" height="200px">
+            <p>&nbsp;</p>
+            <img class="center" src="Imagenes/CS2.PNG" width="700px" height="300px">
+            <p>En vez de hacer copias de seguridad de los archivos de usuario decidimos realizarlas sobre un carpeta de prueba con los archivos de la página web.</p>
+            <p>&nbsp;</p>
+            <p><strong>2.</strong> Para realizar las copias nos dirigiremos a “sudo crontab -e” y escribiremos un comando cron y tar para que se realicen copias tanto mensuales como semestrales.
+            <p>&nbsp;</p>
+            <p><strong>3.</strong>Para hacer las copias mensuales configuraremos el comando tal que así:
+                “00 00 1 1-12 * cd /backups && tar -cvzf Fase2mensual.tgz -g snapshot.snar /Fase2”
+                Lo que quiere decir este comando es que a las 00:00 del 1 de cada mes de cualquier año se dirigirá a la carpeta “backups” y creará una  copia llamada “Fase2mensual” y realizará una snapshot de la carpeta “Fase2”</p>
+            <p>&nbsp;</p>
+            <p><strong>4.</strong>Para hacer las copias semestrales configuraremos el comando tal que así:
+                “00 00 1 6,12 * cd /backups && tar -cvzf Fase2mensual.tgz -g snapshot.snar /Fase2”
+                Lo que quiere decir este comando es que a las 00:00 del 1 de los meses Junio y Diciembre de cualquier año se dirigirá a la carpeta “backups” y creará una  copia llamada “Fase2semestral” y realizará un snapshot de la carpeta “Fase2”</p>
+                <img class="center" src="Imagenes/CS3.PNG" width="700px" height="400px">
+            <h3>2. Copias de seguridad en Windows</h3>
+            <p><strong>1.</strong> Para poder realizar la copia de seguridad en  windows tal y como he hecho a continuación necesitamos Cobian backup 11.</p>    
+            <img class="center" src="Imagenes/CS4.PNG" width="400px" height="400px">
+            <p>&nbsp;</p>
+            <p><strong>2.</strong> Cuando ya hemos descargado la aplicación nos aparecerá la siguiente pantalla, en la cual escogeremos el idioma que queremos.</p>
+            <img class="center" src="Imagenes/CS5.PNG" width="700px" height="400px">
+            <p>&nbsp;</p>
+            <p><strong>3.</strong> Cuando hemos pasado a la siguiente ventana tendremos que aceptar las condiciones de políticas de privacidad para poder continuar con la instalación y la programación de las copias. </p>        
+            <img class="center" src="Imagenes/CS6.PNG" width="700px" height="400px">
+            <p>&nbsp;</p>
+            <p><strong>4.</strong> Ahora seguidamente escogeremos donde queremos instalarlo.</p>
+            <img class="center" src="Imagenes/CS7.PNG" width="700px" height="400px">
+            <p>&nbsp;</p>
+            <p><strong>5.</strong> Cuando ya hemos escogido donde queremos tener cobian backup haremos click en “como un servicio” y también usaremos la cuenta del sistema local.</p>
+            <img class="center" src="Imagenes/CS8.PNG" width="700px" height="400px">
+            <p>&nbsp;</p>
+            <p><strong>6.</strong> Ya configurado estos apartados podremos darle a instalar para que proceda.</p>
+            <img class="center" src="Imagenes/CS9.PNG" width="700px" height="400px">
+            <p>&nbsp;</p>
+            <p><strong>7.</strong> Cuando ya está instalado lo que tendremos que hacer es iniciar la aplicación, seguidamente buscaremos el siguiente icono(añadir tarea) para empezar con las copias de seguridad.</p>
+            <p>&nbsp;</p>
+            <p><strong>8.</strong> Ahora podemos añadir el nombre que queramos a la tarea y escoger el tipo de respaldo, en nuestro caso he puesto copia mensual para poder identificar.</p>
+            <img class="center" src="Imagenes/CS10.PNG" width="700px" height="400px">
+            <p>&nbsp;</p>
+            <p><strong>9.</strong> A continuación haremos click en ficheros para poder seleccionar los ficheros que queremos copiar y donde queremos que haga la copia.</p>
+            <img class="center" src="Imagenes/CS11.PNG" width="700px" height="400px">
+            <p>&nbsp;</p>
+            <p><strong>10.</strong> En esta ventana podemos escoger cada cuanto queremos que haga la copia, en nuestro enunciado tenemos que hacer la copia mensual y semestral, pero en esta aplicación no hay una manera para poder hacer la copia semestral.</p>
+            <img class="center" src="Imagenes/CS12.PNG" width="700px" height="400px">
+            <p>&nbsp;</p>
+            <p><strong>11.</strong> Cuando hemos hecho todos estos pasos nos aparecerá la copia en la lista de tareas un la cual podemos ver todas las características que tiene esta tarea. </p>
+            <img class="center" src="Imagenes/CS13.PNG" width="700px" height="400px">
+            <p>&nbsp;</p>
+            <h3>3. Contenido subido en la nube.</h3>
+            <p><strong>1.</strong> En la lista de contenidos del reto nos pedía elegir un sitio en la nube para poder subir los archivos con una estructura de carpetas clara. Hemos decidido realizarlo en Google Drive. La estructura de carpetas sería tal que:</p>
+            <img class="center" src="Imagenes/CS14.PNG" width="700px" height="200px">
+            <img class="center" src="Imagenes/CS15.PNG" width="700px" height="200px">
+            <p>&nbsp;</p>
+            <p><strong>2.</strong> Dentro de las carpetas de Ubuntu y Windows tenemos que poner las carpetas con las copias de seguridad realizadas en cada servidor:</p>
+            <img class="center" src="Imagenes/CS16.PNG" width="700px" height="200px">
+            <img class="center" src="Imagenes/CS17.PNG" width="700px" height="200px">
+            <p>&nbsp;</p>
+            <p><strong>3.</strong> Además de las copias nos pedían un documento en el que se expliquen el porqué de este contenido web, (en nuestro caso Google Drive) y con un manual de la configuración de los permisos de usuario, pero como en las copias de seguridad las realizamos con los archivos de la página web hemos hecho el manual sobre como descomprimir estos archivos para poder ver la página. Este documento además lo añadimos dentro de la estructura de carpetas:</p>
+            <img class="center" src="Imagenes/CS18.PNG" width="700px" height="400px">
+            <p>&nbsp;</p>
+            <p><strong>4.</strong> Por último nos quedaría compartir la estructura de carpetas con los miembros del grupo con permisos de edición y con los profesores del proyecto con permisos de lectura:</p>
+            <img class="center" src="Imagenes/CS19.PNG" width="700px" height="500px">
+        </div>
+    </body>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <footer class="foot">
+        <nav class="footer">
+                Centre d'estudis Politècnics
+                <a id="linkf" href="Formulario.html">Formulario</a>
+                <a href="https://www.labdoo.org/es/"><img id="lab" src="Imagenes/labdoo.png" width="40px" height="40px"></a>
+                <a href="https://politecnics.barcelona/"><img id="pol" src="Imagenes/politec.jpg" width="40px" height="40px"></a>
+        </nav>
+    </footer>
+</html>

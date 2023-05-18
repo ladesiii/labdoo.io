@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="EstiloFase2.css">
+        <title>Reto 7.1: Servidor Web</title>
+        <link rel="icon" type="image/jpg" href="Imagenes/politec.jpg">
+    </head>
+    <header>
+        <img src="Imagenes/Logo pw.png"alt="Politecnics">
+        <nav class="nav">
+            <ul class="menuhorizontal">
+                <li><a href="Labdoo.html">Menú principal</a></li>
+                <li>
+                    <a>Fase 1</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 1.html">Reto 1</a></li>
+                        <li><a href="Reto 2.html">Reto 2</a></li>
+                        <li><a href="Reto 3.html">Reto 3</a></li>
+                        <li><a href="Reto 4.html">Reto 4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Fase 2</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 5.html">Reto 5</a></li>
+                        <li><a href="Reto 6.html">Reto 6</a></li>
+                        <li><a href="Reto 7.1.html">Reto 7.1</a></li>
+                        <li><a href="Reto 7.2.html">Reto 7.2</a></li>
+                        <li><a href="Reto 8.html">Reto 8</a></li>
+                        <li><a href="Reto 9.html">Reto 9</a></li>
+                        <li><a href="Reto 10.html">Reto 10</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Fase 3</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 11.html">Reto 11</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <h1>Reto 7.1: Servidor Web</h1>
+        <div class="text">
+            <p>Un servidor web o servidor HTTP es un programa informático que procesa una aplicación del lado del servidor, realizando conexiones bidireccionales o unidireccionales y síncronas o asíncronas con el cliente y generando o cediendo una respuesta en cualquier lenguaje o aplicación del lado del cliente.</p>
+            <img class="center" src="Imagenes/SW1.PNG"width="700px" height="400px">
+            <p>A continuación os explicaremos cómo hemos desarrollado este reto, en el cual, hemos utilizado la misma máquina virtual de Ubuntu Server. En este reto nos pedía hacer la instalación y configuración del servidor web. 
+                Primero de todo instalaremos el paquete apache2 a través de la terminal como la configuración en la cual tendremos que configurar que nuestro sitio web sea www.grup4.cat y después configurar del sitio habilitado un certificado SSL/TLS, eso quiere decir que podremos entrar al sitio web tanto por el puerto 80 como por el 443.</p>
+            <h3>1. Instalación del servidor web</h3>
+            <p><strong> 1.</strong>Para empezar la instalación del servidor web debíamos instalar Apache 2, para esto usamos el comando sudo apt install apache2. </p>
+            <img class="center" src="Imagenes/SW2.PNG"width="700px" height="400px">
+            <p>&nbsp;</p>
+            <p><strong> 2.</strong>Una vez instalado debemos validar su estado usando el comando sudo systemctl status apache2.</p>
+            <img class="center" src="Imagenes/SW3.PNG"width="700px" height="400px">
+            <p>&nbsp;</p>
+        
+        
+        </div>
+    </body>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <footer class="foot">
+        <nav class="footer">
+                Centre d'estudis Politècnics
+                <a id="linkf" href="Formulario.html">Formulario</a>
+                <a href="https://www.labdoo.org/es/"><img id="lab" src="Imagenes/labdoo.png" width="40px" height="40px"></a>
+                <a href="https://politecnics.barcelona/"><img id="pol" src="Imagenes/politec.jpg" width="40px" height="40px"></a>
+        </nav>
+    </footer>
+</html>

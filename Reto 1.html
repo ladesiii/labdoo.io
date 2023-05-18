@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="EstiloFase2.css">
+        <title>Reto 1: Elección de infraestructura</title>
+        <link rel="icon" type="image/jpg" href="Imagenes/politec.jpg">
+    </head>
+    <header>
+        <img src="Imagenes/Logo pw.png"alt="Politecnics">
+        <nav class="nav">
+            <ul class="menuhorizontal">
+                <li><a href="Labdoo.html">Menú principal</a></li>
+                <li>
+                    <a>Fase 1</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 1.html">Reto 1</a></li>
+                        <li><a href="Reto 2.html">Reto 2</a></li>
+                        <li><a href="Reto 3.html">Reto 3</a></li>
+                        <li><a href="Reto 4.html">Reto 4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Fase 2</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 5.html">Reto 5</a></li>
+                        <li><a href="Reto 6.html">Reto 6</a></li>
+                        <li><a href="Reto 7.1.html">Reto 7.1</a></li>
+                        <li><a href="Reto 7.2.html">Reto 7.2</a></li>
+                        <li><a href="Reto 8.html">Reto 8</a></li>
+                        <li><a href="Reto 9.html">Reto 9</a></li>
+                        <li><a href="Reto 10.html">Reto 10</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Fase 3</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 11.html">Reto 11</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <h1>Reto 1: Elección de infraestructura</h1>
+        <div class="text">
+            <h3>1. Elección de topologías de red</h3>
+                <p>A la hora de implementar la red para el plano del proyecto, después de informarnos sobre las ventajas y desventajas de cada una, hemos escogido para la infraestructura las siguientes topologías, que es la mixta, en la que estará compuesta por:</p>
+                <ul>
+                    <li>Árbol</li>
+                    <li>Estrella</li>
+                </ul>
+                <img class="center" src="Imagenes/Eleccioninfraestructura.PNG">
+                <p>&nbsp;</p>
+                <h3>2. ¿Por qué hemos elegido estas topologías?</h3>
+                <p>Hemos elegido estas topologías, ya que creemos que son las más aptas, eficientes y económicas. A continuación, veremos las ventajas de las topologías que hemos escogido.</p>
+                <h4>MIXTA</h4>
+                <ul>
+                    <li>Estas topologías son flexibles, confiables y tienen mayor tolerancia a fallas</li>
+                    <li>El grado de flexibilidad que proporciona, ya que hay pocas limitaciones en la estructura de una red como tal que una configuración mixta no pueda adaptar</li>
+                    <li>Si un ordenador falla, entonces es detectado por el hub al que está conectado y simplemente lo aísla del resto de la red</li>
+                </ul>
+                <h4>ÁRBOL</h4>
+                <ul>
+                    <li>Proporciona una disposición de datos jerárquica y central de los nodos</li>
+                    <li>Como los nodos hoja pueden agregar uno o más nodos en la string jerárquica, esta topología proporciona una alta escalabilidad</li>
+                    <li>Los otros nodos de una red no se ven afectados si uno de sus nodos se daña o no funciona</li>
+                    <li>Un fácil mantenimiento y se puede realizar una fácil identificación de fallas</li>
+                </ul>
+                <h4>ESTRELLA</h4>
+                <ul>
+                    <li>Si un nodo o su conexión se rompe, no afecta a las otras computadoras ni a sus conexiones</li>
+                    <li>Los dispositivos se pueden agregar o quitar sin perturbar la red</li>
+                    <li>Funciona bien bajo carga pesada</li>
+                    <li>Apropiado para una gran red</li>
+                </ul>
+            <p>&nbsp;</p>
+            <h3>3. ¿Cómo lo distribuiremos?</h3>
+                <img class="center" src="Imagenes/plano.PNG">
+                <p>Tenemos varios switches, cada uno transmitiendo datos a una red en estrella desde una en árbol, en la que un dispositivo recibe las señales de datos de todos los equipos y las transmite a través de los distintos puertos.</p>
+                <p>Distribuiremos todo de la siguiente manera. Primero en la sala de servidores ubicamos el rack principal en el que tendremos el router, el servidor, y un switch, desde el cual, llevaremos los cables a través de canaletas hasta todos los racks, que hemos ubicado uno por aula, en estos, tendremos 2 switches y un access point, menos en el aula 1.1, que en vez de poner 2 switches pondremos solo uno, ya que no es necesario poner más, conjunto a el access point, después a través de canaletas llevaremos el cable hasta las rosetas correspondientes.</p>
+                <p>&nbsp;</p>
+            <h3>4. Normativa</h3>
+                <a class="document" href="NORMATIVA.pdf">NORMATIVA</a>
+        </div>    
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+    </body> 
+    <footer class="foot">
+        <nav class="footer">
+                Centre d'estudis Politècnics
+                <a id="linkf" href="Formulario.html">Formulario</a>
+                <a href="https://www.labdoo.org/es/"><img id="lab" src="Imagenes/labdoo.png" width="40px" height="40px"></a>
+                <a href="https://politecnics.barcelona/"><img id="pol" src="Imagenes/politec.jpg" width="40px" height="40px"></a>
+        </nav>
+    </footer>
+</html>

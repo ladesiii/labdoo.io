@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="EstiloFase2.css">
+        <title>Reto 5: DHCP</title>
+        <link rel="icon" type="image/jpg" href="Imagenes/politec.jpg">
+    </head>
+    <header>
+        <img src="Imagenes/Logo pw.png"alt="Politecnics">
+        <nav class="nav">
+            <ul class="menuhorizontal">
+                <li><a href="Labdoo.html">Menú principal</a></li>
+                <li>
+                    <a>Fase 1</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 1.html">Reto 1</a></li>
+                        <li><a href="Reto 2.html">Reto 2</a></li>
+                        <li><a href="Reto 3.html">Reto 3</a></li>
+                        <li><a href="Reto 4.html">Reto 4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Fase 2</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 5.html">Reto 5</a></li>
+                        <li><a href="Reto 6.html">Reto 6</a></li>
+                        <li><a href="Reto 7.1.html">Reto 7.1</a></li>
+                        <li><a href="Reto 7.2.html">Reto 7.2</a></li>
+                        <li><a href="Reto 8.html">Reto 8</a></li>
+                        <li><a href="Reto 9.html">Reto 9</a></li>
+                        <li><a href="Reto 10.html">Reto 10</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Fase 3</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 11.html">Reto 11</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <h1>Reto 5: DHCP</h1>
+        <div class="text">
+            <p>El Protocolo de configuración dinámica de host (DHCP) es un protocolo cliente/servidor que proporciona automáticamente un host de Protocolo de Internet (IP) con su dirección IP y otra información de configuración relacionada, como la máscara de subred y la puerta de enlace predeterminada.</p>
+            <img class="center" src="Imagenes/dhcp.PNG" alt="dhcp">
+            <p>En este reto, tenemos que instalar y configurar un servidor DHCP y después aplicarlo en el packet tracer creado en la fase anterior, es decir la primera. Todo esto, lo haremos a través de una máquina virtual de Ubuntu Server.</p>    
+            <p>Para este reto , será conveniente descargar los siguientes paquetes en nuestra máquina Ubuntu server:</p>
+            <ul>
+                <li>net-tools [Antes de comenzar la pràctica]</li>
+                <li>isc-dhcp-server [Cuando se indique en  la documentació]</li>
+            </ul>
+            <p>Además, para la configuración del servidor DHCP, se tendrán que modificar los siguientes archivos, cuando se nos indique en la documentación:</p>
+            <ul>
+                <li>/etc/netplan/00-netcfg.yaml (Para configurar los adaptadores de red)</li>
+                <li>/etc/dhcp/dhcpd.conf (Para configurar el servidor DHCP)</li>
+                <li>/etc/default/isc-dhcp-server (Para indicar el adaptador con el que trabajaremos)</li>
+                <li>service isc-dhcp- server start (Para iniciar el servidor)</li>
+                <li>service isc-dhcp- server status (Para ver el estado del servidor)</li>
+                <li>service isc-dhcp- server stop (Para parar el servidor)</li>
+            </ul>
+        <p>&nbsp;</p>
+        <h2>1. Instal·lació del servidor DHCP</h2>
+        <p><strong> 1.</strong> En primer lloc crearem un segon adaptador de red, per aixó ens situarem a sobre de la maquina i clicarem a “Configuración” anem a la pestaña “Red” , seleccionem “Adaptador 2” i posem el adaptador en Red interna. Un dels adaptadors estará en NAT per poder descarregar els paquets necessaris per al servidor i l’altre estara en Red interna per que no hagin problemas</p>
+        <img class="center" src="Imagenes/insdhcp1.PNG">            <img class="center" src="Imagenes/insdhcp2.PNG">
+        <p>&nbsp;</p>
+        <p><strong>2.</strong> Per verificar que hem afegit l'adaptador posarem l'ordre ifconfig -a i veurem enp0s8 que és l'adaptador en xarxa interna</p>
+        <img class="center" src="Imagenes/insdhcp3.PNG" width="700px" height="500px">
+        <p>&nbsp;</p>
+        <p><strong> 3.</strong> Un cop hem vist l'adaptador de xarxa interna toca configurar l'adaptador. Per poder configurar l'adaptador haurem de posar la següent ordre “nano /etc/netplan/08-installer-config.yaml” , dintre del arxiu especificarem el gateway4,  la IP estatica al adaptador “enp0s8” i la direccio DNS</p>            <img class="center" src="Imagenes/insdhcp4.PNG">
+        <p>&nbsp;</p>
+        <p><strong> 4.</strong> Per aplicar els canvis  utilitzem l’ordre “netplan apply” </p>
+        <img class="center" src="Imagenes/insdhcp5.PNG" width="700px" height="200px">
+        <p>&nbsp;</p>
+        <h2>2. Configuració del servidor DHCP</h2>
+        <p><strong> 1.</strong> A continuació desactivem momentàniament la interfície de la xarxa interna i descarreguem i instal·lem el servidor DHCP a la nostra màquina Ubuntu Server. Per desactivar momentàniament la interfície de xarxa “ifconfig enp0s8 down” i per instal·lar el servidor del DHCP “apt-get install isc-dhcp-server” una vegada instalat el servidor toca modificar els següents arxius (/etc/dhcp/dhcpd.conf  i /etc/default/isc-dhcp-server) . Modificarem els següents arxius com es mostra a las següents imatges i modifiquem el temps de concessió a una setmana</p>
+        <p>/etc/dhcp/dhcpd.conf</p>
+        <img class="center" src="Imagenes/confdhcp1.PNG"width="700px" height="300px">
+        <p>&nbsp;</p>
+        <p> /etc/default/isc-dhcp-server</p>
+        <img class="center" src="Imagenes/confdhcp2.PNG"width="700px" height="300px">
+        <p>&nbsp;</p>
+        <p><strong> 2.</strong> Per comprobar si funciona el servidor ficarem la comanda “service isc-dhcp- server start” i seguidament “service isc-dhcp- server status”</p>
+        <img class="center" src="Imagenes/confdhcp3.PNG"width="700px" height="500px">
+        <p>&nbsp;</p>
+        <h2>3. Aplicar DHCP a Packet Tracer</h2>
+        <p><strong> 1.</strong> Primero para que funcione el servidor dhcp es necesario tener configurado el router, para ello nos iremos al armario de  servidores y seleccionamos el router.
+        <img class="center" src="Imagenes/imagen1PT.PNG"width="700px" height="500px">
+        <p>&nbsp;</p>
+        <p><strong> 2.</strong> Una vez hemos seleccionado el router le asignamos una dirección IP al cable que está conectado al switch.</p>
+        <img class="center" src="Imagenes/imagen2PT.PNG"width="700px" height="500px">
+        <p>&nbsp;</p>
+        <p><strong> 3.</strong> Y para acabar nos vamos al servidor, seleccionamos dhcp y configuramos el servidor.</p>
+        <img class="center" src="Imagenes/imagen3PT.PNG"width="700px" height="500px">
+        <p>&nbsp;</p>
+        <p><strong> 4.</strong> Si hemos seguido todos los pasos correctamente entonces en cualquier cliente que pongamos DHCP nos tendría que salir lo configurado anteriormente.</p>   
+        <img class="center" src="Imagenes/imagen4PT.PNG"width="700px" height="400px">
+    </div>
+    </body>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <footer class="foot">
+        <nav class="footer">
+                Centre d'estudis Politècnics
+                <a id="linkf" href="Formulario.html">Formulario</a>
+                <a href="https://www.labdoo.org/es/"><img id="lab" src="Imagenes/labdoo.png" width="40px" height="40px"></a>
+                <a href="https://politecnics.barcelona/"><img id="pol" src="Imagenes/politec.jpg" width="40px" height="40px"></a>
+        </nav>
+    </footer>
+</html>

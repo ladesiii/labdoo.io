@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="EstiloFase2.css">
+        <title>Reto 8: FIREWALL</title>
+        <link rel="icon" type="image/jpg" href="Imagenes/politec.jpg">
+    </head>
+    <header>
+        <img src="Imagenes/Logo pw.png"alt="Politecnics">
+        <nav class="nav">
+            <ul class="menuhorizontal">
+                <li><a href="Labdoo.html">Menú principal</a></li>
+                <li>
+                    <a>Fase 1</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 1.html">Reto 1</a></li>
+                        <li><a href="Reto 2.html">Reto 2</a></li>
+                        <li><a href="Reto 3.html">Reto 3</a></li>
+                        <li><a href="Reto 4.html">Reto 4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Fase 2</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 5.html">Reto 5</a></li>
+                        <li><a href="Reto 6.html">Reto 6</a></li>
+                        <li><a href="Reto 7.1.html">Reto 7.1</a></li>
+                        <li><a href="Reto 7.2.html">Reto 7.2</a></li>
+                        <li><a href="Reto 8.html">Reto 8</a></li>
+                        <li><a href="Reto 9.html">Reto 9</a></li>
+                        <li><a href="Reto 10.html">Reto 10</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Fase 3</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 11.html">Reto 11</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <h1>Reto 8: Firewall</h1>
+        <div class="text">
+            <p>Un firewall o cortafuegos es un software o hardware que está diseñado para bloquear el   acceso no autorizado. Su función principal es la de examinar y controlar el tráfico de red que entra y sale de una red protegida, permitiendo o denegando el acceso según las reglas de seguridad configuradas.</p>
+            <img class="center"src="Imagenes/firewall1.PNG" width="700px" height="400px">
+            <p>A continuación os explicaremos cómo hemos desarrollado este reto, en el cual, hemos utilizado la misma máquina virtual de Ubuntu Server. En este reto nos pedía hacer la instalación y configuración de un Firewall. En el cual tendremos que limitar los siguientes accesos, primero permitirá la navegación web y web segura de la red de la escuela, esto implica activar el NAT para que funcione, permitirá la conexión remotas a anydesk y terminal server para acceder remotamente al ordenador de casa de los profes, conexiones a servidores DNS externos, permitirá conexiones ftp a internet y al propio firewall, haga log de todas las conexiones y por último el resto de accesos estará denegado.</p>
+            <p>&nbsp;</p>
+            <h3>1. Instalación de un firewall.</h3>
+            <p><strong> 1.</strong> Para empezar con la creación del firewall instalamos los iptables con el comando “apt install iptables” una vez instalado los iptables crearemos un script con las reglas del firewall en /etc/init.d , en mi caso llamare el archivo “fdenegar.sh”</p>
+            <img class="center" src="Imagenes/firewall2.PNG" width="700px" height="400px">
+            <p>Una vez hemos creado el script tendremos que poner el script como predeterminado para que cuando se apague la máquina virtual no tengamos que volver a crear el script ya que se borraría.</p>
+            <p>&nbsp;</p>
+            <h3>2. Configuración de un firewall.</h3>
+            <p><strong> 1.</strong> Para comenzar tendremos que ir al directorio /etc/systemd/system  y crearemos un archivo que se llamara firewall.service en ExecStart se pondrá lo mismo que pone en la imagen excepto donde pone fdenegar.sh que  se pondra el nombre del script que tu le hayas otorgado.</p>
+            <img class="center" src="Imagenes/firewall3.PNG" width="700px" height="200px">
+            <p>&nbsp;</p>
+            <p><strong> 2.</strong> Le daremos permisos con el comando chmod a fdenegar.sh y a firewall.service y comprobaremos los permisos que le hemos dado con ls -l.</p>
+            <img class="center" src="Imagenes/firewall4.PNG" width="700px" height="100px">
+            <img class="center" src="Imagenes/firewall5.PNG" width="700px" height="25px">
+            <p>&nbsp;</p>
+            <p><strong> 3.</strong> Para realizar los cambios pondremos systemctl daemon-reload y systemctl enable firewall.sh.</p>
+            <img class="center" src="Imagenes/firewall6.PNG" width="700px" height="50px">
+            <p>&nbsp;</p>
+            <p><strong> 4.</strong> Y para verificar que se han cargado las reglas pondremos iptables -L -v -n.</p>
+            <img class="center" src="Imagenes/firewall7.PNG" width="700px" height="400px">
+            <p>Como hemos activado los logs de iptables, deberemos buscar algún programa que nos permita monitorizar estos logs.</p>
+        </div>
+    </body>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <footer class="foot">
+        <nav class="footer">
+                Centre d'estudis Politècnics
+                <a id="linkf" href="Formulario.html">Formulario</a>
+                <a href="https://www.labdoo.org/es/"><img id="lab" src="Imagenes/labdoo.png" width="40px" height="40px"></a>
+                <a href="https://politecnics.barcelona/"><img id="pol" src="Imagenes/politec.jpg" width="40px" height="40px"></a>
+        </nav>
+    </footer>
+</html>

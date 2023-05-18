@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="EstiloFase2.css">
+        <title>Reto 6: DNS</title>    
+        <link rel="icon" type="image/jpg" href="Imagenes/politec.jpg">
+    </head>
+    <header>
+        <img src="Imagenes/Logo pw.png"alt="Politecnics">
+        <nav class="nav">
+            <ul class="menuhorizontal">
+                <li><a href="Labdoo.html">Menú principal</a></li>
+                <li>
+                    <a>Fase 1</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 1.html">Reto 1</a></li>
+                        <li><a href="Reto 2.html">Reto 2</a></li>
+                        <li><a href="Reto 3.html">Reto 3</a></li>
+                        <li><a href="Reto 4.html">Reto 4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Fase 2</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 5.html">Reto 5</a></li>
+                        <li><a href="Reto 6.html">Reto 6</a></li>
+                        <li><a href="Reto 7.1.html">Reto 7.1</a></li>
+                        <li><a href="Reto 7.2.html">Reto 7.2</a></li>
+                        <li><a href="Reto 8.html">Reto 8</a></li>
+                        <li><a href="Reto 9.html">Reto 9</a></li>
+                        <li><a href="Reto 10.html">Reto 10</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Fase 3</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 11.html">Reto 11</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <h1>Reto 6: DNS</h1>
+        <div class="text">
+            <p>DNS se corresponde con las siglas de Domain Name System (que se traduce por Sistema de Nombres de Demonio) y es el sistema que hace posible que podamos navegar por Internet, puesto que apunta los dominios al servidor correspondiente y, además, sirve de intérprete entre nosotros y la máquina al traducir la dirección IP (un secuencia numérica) a un nombre de dominio (el nombre de una web).</p>
+            <img class="center" src="Imagenes/dns.PNG">
+            <p>A continuación os explicaremos cómo hemos desarrollado este reto, en el cual, hemos utilizado una máquina virtual de Ubuntu Server. Nos pedía hacer la instalación y configuración del servidor DNS y una vez hecho esto aplicarlo al Packet Tracer que hicimos en la Fase anterior.</p>
+            <p>En la configuración, hemos tenido que configurar el DNS para que podamos utilizar la web a través de un dominio, también le hemos dado los accesos más habituales y para que se puedan servir estos accesos hemos tenido que hacer que nuestro servidor pueda acceder al DNS resolver. Por último, hemos hecho que se pueda resolver el dominio que hemos creado en el siguiente reto.</p>
+            <p>Sin contar el apartado del Packet Tracer, todo esto se ha hecho a través de la terminal de Ubuntu Server. </p>
+            <p>&nbsp;</p>
+            <h3>1. Instalación de un servidor DNS.</h3>
+            <p>Para empezar este reto, hemos hecho la instalación del servidor DNS, la cual hemos hecho descargando el paquete bind9, que para ello hemos configurado primero el proxy. Todo esto lo hemos hecho de la siguiente manera:</p>
+            <p>Primero de todo, para poder instalar el paquete bind9 necesitamos configurar la red y el proxy, para ello vamos a modificar los siguientes archivos:</p>
+            <ul>
+                <li>/etc/netplan/00-netcfg.yaml</li>
+                <li>/etc/bash.bashrc</li>
+                <li>/etc/environment</li>
+                <li>/etc/apt/apt.conf</li>
+            </ul>
+            <p>&nbsp;</p>
+            <p><strong> 1.</strong> Para modificar el primer archivo, lo vamos a hacer poniendo el siguiente texto en la imagen.</p>
+            <img class="center" src="Imagenes/dns1,1.PNG"width="700px" height="500px">
+            <p>&nbsp;</p>
+            <p><strong> 2.</strong> Una vez hecho esto, vamos a aplicarlo con el código seleccionado en la imagen.</p>
+            <img class="center" src="Imagenes/dns1,2.PNG"width="700px" height="50px">
+            <p>&nbsp;</p>
+            <p><strong> 3.</strong> Ahora, vamos a actualizar el sistema con los siguientes comandos y después reiniciar la máquina. </p>
+            <img class="center" src="Imagenes/dns1,3.PNG"width="700px" height="500px">
+            <img class="center" src="Imagenes/dns1,4.PNG"width="700px" height="300px">
+            <p>Para reiniciar la maquina, lo hacemos poniendo el comando: reboot</p>
+            <p>&nbsp;</p>
+            <p><strong> 4.</strong> Ahora, vamos al final del archivo y escribimos el siguiente texto marcado en la imagen.</p>
+            <img class="center" src="Imagenes/dns1,5.PNG"width="700px" height="500px">
+            <p>&nbsp;</p>
+            <p><strong> 5.</strong> En este archivo, vamos a hacer lo mismo que en el anterior, pondremos el texto marcado en la imagen, debajo del texto existente.</p>
+            <img class="center" src="Imagenes/dns1,6.PNG"width="700px" height="300px">
+            <p>&nbsp;</p>
+            <p><strong> 6.</strong> En este archivo es diferente, ya que está vacío, por eso vamos a poner únicamente lo marcado en la imagen.</p>
+            <img class="center" src="Imagenes/dns1,7.PNG"width="700px" height="300px">
+            <p>&nbsp;</p>
+            <p><strong> 7.</strong> Una vez hemos configurado la red y el proxy, vamos a instalar el paquete bind9 con el siguiente comando: apt-get install bind9.</p>
+            <img class="center" src="Imagenes/dns1,8.PNG"width="700px" height="300px">
+            <p>&nbsp;</p>
+            <p><strong> 8.</strong> Ahora vamos a instalar el paquete auxiliar bind9-utils, con el siguiente comando marcado en la imagen.</p> 
+            <img class="center" src="Imagenes/dns1,9.PNG"width="700px" height="300px">
+            <p>&nbsp;</p>
+            <h3>2. Configuración del Servidor DNS.</h3>
+            <p>Una vez hecha la instalación de los paquetes necesarios, procedemos a configurar el DNS con las características dichas en la introducción del servidor DNS.</p>
+            <p><strong> 1.</strong> Para empezar, el primer archivo que modificaremos para configurar correctamente el servidor DNS es el archivo /etc/bind/named.conf.options donde hemos indicado los siguientes datos:</p>
+            <ul>
+                <li>IP del servidor.</li>
+                <li>Máscara de subred.</li>
+                <li>IPs del DNS al que nos dirigimos cuando encontramos uno en nuestro servidor local.</li>
+            </ul>
+            <p>Para ello lo ponemos como se puede ver en la imagen.</p>
+            <img class="center" src="Imagenes/DNSc1.PNG"width="700px" height="500px">
+            <p>&nbsp;</p>
+            <p><strong> 2.</strong> Después de modificar el archivo anterior, proseguimos a editar el archivo /etc/default/named, donde nos obligaremos a usar el protocolo IPv4. Modificaremos la línea de código, tal y como está en la imagen.</p>
+            <img class="center" src="Imagenes/DNSc2PNG.PNG"width="700px" height="200px">
+            <p>&nbsp;</p>
+            <p><strong> 3.</strong> Ahora para comprobar que funciona vamos a utilizar el comando named-checkconf, si está bien nos saldrá lo mismo que en la imagen sinó, tendremos que mirar qué hemos puesto mal.</p>
+            <img class="center" src="Imagenes/DNSc3.PNG"width="700px" height="50px">
+            <p>&nbsp;</p>
+            <p><strong> 4.</strong> En segundo lugar, pondremos el comando service bind9 restart para reiniciar y luego para saber si esta bien pondremos service bind9 status como en las siguientes imágenes.</p>
+            <img class="center" src="Imagenes/DNSc4.PNG"width="700px" height="300px">
+            <p>&nbsp;</p>
+            <p><strong> 5.</strong> Ahora vamos a crear las zonas de búsqueda directa e inversa, para ello modificaremos el archivo /etc/bind/named.conf.local como se indica en la imagen.</p>
+            <img class="center" src="Imagenes/DNSc5.PNG"width="700px" height="300px">
+            <p>&nbsp;</p>
+            <p><strong> 6.</strong> Una vez hecho esto, creamos un directorio en la ruta /etc/bind llamado “zones” con el comando mkdir zones, donde guardaremos los archivos de configuración de las zonas de búsqueda.</p>
+            <img class="center" src="Imagenes/DNSc6.PNG"width="700px" height="100px">
+            <p>&nbsp;</p>
+            <p><strong> 7.</strong> Una vez creado el directorio, en este crearemos un archivo llamado db.grup4.cat con el comando touch db.grup4.cat, donde guardaremos la configuración de la zona de búsqueda directa. En el cual escribiremos lo que aparece en la imagen.</p>
+            <img class="center" src="Imagenes/DNSc7.PNG"width="700px" height="300px">
+            <p>&nbsp;</p>
+            <p><strong> 8.</strong> También configuraremos la zona inversa, para ello crearemos un archivo llamado db.172.16 en el directorio. Lo haremos de la siguiente manera tal y como se ve en la imagen.</p>
+            <img class="center" src="Imagenes/DNSc8.PNG"width="700px" height="300px">
+            <p>&nbsp;</p>
+            <p><strong> 9.</strong> Como las modificaciones que hemos realizado son un poco complejas, pondremos los comandos que aparecen en la imagen, para comprobar que lo hemos hecho bien.</p>
+            <img class="center" src="Imagenes/DNSc9.PNG"width="700px" height="200px">
+            <p>&nbsp;</p>
+            <p><strong> 10.</strong> Ahora reiniciamos el servidor DNS con el comando que vemos en la imagen. </p>
+            <img class="center" src="Imagenes/DNSc10.PNG"width="700px" height="50px">
+            <p>&nbsp;</p>
+            <p><strong> 11.</strong>  Para saber si esta bien conectado, tenemos que poner los siguientes comandos, en los cuales haremos diferentes ping:</p>
+            <ul>
+                <li>ping  172.16.90.131</li>
+            </ul>
+            <img class="center" src="Imagenes/DNSc11a.PNG"width="700px" height="300px">
+            <ul>
+                <li>ping  www.grup4.cat</li>
+            </ul>
+            <img class="center" src="Imagenes/DNSc11b.PNG"width="700px" height="300px">
+            <p>&nbsp;</p>
+            <h3>3. Aplicar DNS en Packet Tracer.</h3>
+            <p><strong> 1.</strong>  Para aplicar el dns en packet tracer nos iremos al servidor, clicamos a “services” i en HTTP agregaremos los archivos de la página web.</p>
+            <img class="center" src="Imagenes/DNSpt1.PNG"width="700px" height="700px">
+            <p>&nbsp;</p>
+            <p><strong> 2.</strong> Una vez agregados los archivos nos iremos donde dice DNS y añadiremos el dns.</p>
+            <img class="center" src="Imagenes/DNSpt2.PNG"width="700px" height="700px">
+            <p>&nbsp;</p>
+            <p><strong> 3.</strong> Para acabar iremos a AAA y agregaremos el nombre de dominio de la página web y la dirección ip de el nombre de dominio</p>
+            <img class="center" src="Imagenes/DNSpt3.PNG"width="700px" height="700px">
+            <p>&nbsp;</p>
+            <p><strong> 4.</strong> Para comprobar si esta bien iremos al servidor, seleccionamos “Web Browser” y pondremos el nombre de dominio, Este es el resultado:</p>
+            <img class="center" src="Imagenes/DNSpt4.PNG"width="700px" height="300px">
+        </div>
+    </body>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <footer class="foot">
+        <nav class="footer">
+                Centre d'estudis Politècnics
+                <a id="linkf" href="Formulario.html">Formulario</a>
+                <a href="https://www.labdoo.org/es/"><img id="lab" src="Imagenes/labdoo.png" width="40px" height="40px"></a>
+                <a href="https://politecnics.barcelona/"><img id="pol" src="Imagenes/politec.jpg" width="40px" height="40px"></a>
+        </nav>
+    </footer>
+</html>

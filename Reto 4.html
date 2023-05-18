@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="EstiloFase2.css">
+        <title>Reto 4. Creación de usuarios y gestión de permisos políticas y directivas.</title>
+        <link rel="icon" type="image/jpg" href="Imagenes/politec.jpg">
+    </head>
+    <header>
+        <img src="Imagenes/Logo pw.png"alt="Politecnics">
+        <nav class="nav">
+            <ul class="menuhorizontal">
+                <li><a href="Labdoo.html">Menú principal</a></li>
+                <li>
+                    <a>Fase 1</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 1.html">Reto 1</a></li>
+                        <li><a href="Reto 2.html">Reto 2</a></li>
+                        <li><a href="Reto 3.html">Reto 3</a></li>
+                        <li><a href="Reto 4.html">Reto 4</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Fase 2</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 5.html">Reto 5</a></li>
+                        <li><a href="Reto 6.html">Reto 6</a></li>
+                        <li><a href="Reto 7.1.html">Reto 7.1</a></li>
+                        <li><a href="Reto 7.2.html">Reto 7.2</a></li>
+                        <li><a href="Reto 8.html">Reto 8</a></li>
+                        <li><a href="Reto 9.html">Reto 9</a></li>
+                        <li><a href="Reto 10.html">Reto 10</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Fase 3</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 11.html">Reto 11</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <h1>Reto 4. Creación de usuarios y gestión de permisos políticas y directivas.</h1>
+        <div class="text">
+            <img class="center" src="Imagenes/reto 4.PNG">
+            <h3>1. Elección de topologías de red</h3>
+                <p>A la hora de implementar la red para el plano del proyecto, después de informarnos sobre las ventajas y desventajas de cada una, hemos escogido para la infraestructura las siguientes topologías, que es la mixta, en la que estará compuesta por:</p>
+                <h3>Usuario base Labdoo</h3>
+                <h4>Definición:</h4>
+                <p>En este apartado tuvimos que crear un usuario base que se llama Labdoo, que es como se llama el cliente que usamos para realizar la configuración.</p>
+                <img class="center" src="Imagenes/user labdoo.PNG">
+                <p>&nbsp;</p>
+            <h3>Estructura de carpeta compartidas</h3>
+            <h4>Definición:</h4>
+                <p>En este apartado tuvimos que crear una estructura de carpetas en el servidor que posteriormente compartimos con el usuario base con permisos de escritura y lectura.</p>
+                <img class="center" src="Imagenes/carpetas 1.PNG" width="700px" height="500px">
+                <img class="center" src="Imagenes/carpetas 2.PNG" width="700px" height="500px">
+                <img class="center" src="Imagenes/carpetas 3.PNG" width="700px" height="500px">
+                <img class="center" src="Imagenes/carpetas 4.PNG" width="700px" height="500px">
+                <img class="center" src="Imagenes/carpetas 5.PNG" width="700px" height="500px">
+                <p>&nbsp;</p>
+            <h3>Lista de permisos del usuario Labdoo</h3>
+            <h4>Definición:</h4>
+                <p>En este apartado tuvimos que seleccionar los permisos que iba a tener el usuario base Labdoo, aquí se puede ver cuales están Habilitados y Deshabilitados y el porqué en la imagen:</p>
+                <a class="document" href="lista permisos.pdf">PERMISOS USUARIOS LABDOO</a>
+                <p>&nbsp;</p>
+            <h3>Definición de las políticas de gestión de la escuela</h3>
+                <p>Por último en este apartado explicamos el porqué de cada permiso y normativa:</p>
+                <p><strong>Fondo de escritorio:</strong> Deshabilitamos el cambio de fondo de escritorio para que los usuarios no puedan cambiarlo y añadir cualquier imagen.</p>
+                <p><strong>Agregar y quitar elementos:</strong> Deshabilitamos la opción de que se puedan añadir o eliminar los elementos del escritorio para que no añadan cosas irrelevantes y eliminen las útiles.</p>
+                <p><strong>Windows Update:</strong> Habilitamos la opción de que no aparezca el apartado de Windows Update en configuración para que no puedan cambiar la versión del sistema operativo y así todos usen la misma.</p>
+                <p><strong>Carpetas compartidas:</strong> Deshabilitamos esta opción para que los usuarios no puedan crear carpetas compartidas ya que ya tienen una creada, que es la que hemos creado anteriormente.</p>
+                <p><strong>Escritorio remoto:</strong> Deshabilitamos la opción del uso del escritorio remoto para que los usuarios no puedan utilizarlo ya que no es una opción que tengan que utilizar.</p>
+                <p><strong>Uso compartido de red:</strong> Habilitamos la opción de impedir que los usuarios compartan archivos ya que así no podrán pasarse los trabajos.</p>
+                <p><strong>Ubicación y sensores:</strong> Desactivamos el cambio de ubicación y sensores ya que es una acción a la cual no necesitan tener acceso.</p>
+        </div>
+    </body>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <footer class="foot">
+        <nav class="footer">
+                Centre d'estudis Politècnics
+                <a id="linkf" href="Formulario.html">Formulario</a>
+                <a href="https://www.labdoo.org/es/"><img id="lab" src="Imagenes/labdoo.png" width="40px" height="40px"></a>
+                <a href="https://politecnics.barcelona/"><img id="pol" src="Imagenes/politec.jpg" width="40px" height="40px"></a>
+        </nav>
+    </footer>
+</html>

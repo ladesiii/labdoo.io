@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="EstiloFase2.css">
+        <title>Formulario</title>
+        <link rel="icon" type="image/jpg" href="Imagenes/politec.jpg">
+    </head>
+    <header>
+        <img src="Imagenes/Logo pw.png"alt="Politecnics">
+        <nav class="nav">
+            <ul class="menuhorizontal">
+                <li><a href="Labdoo.html">Menú principal</a></li>
+                <li>
+                    <a>Fase 1</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 1.html">Reto 1</a></li>
+                        <li><a href="Reto 2.html">Reto 2</a></li>
+                        <li><a href="Reto 3.html">Reto 3</a></li>
+                        <li><a href="Reto 4.html">Reto 4</a></li>
+                        <li><a href="Presupuesto.html">Presupuesto</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Fase 2</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 5.html">Reto 5</a></li>
+                        <li><a href="Reto 6.html">Reto 6</a></li>
+                        <li><a href="Reto 7.1.html">Reto 7.1</a></li>
+                        <li><a href="Reto 7.2.html">Reto 7.2</a></li>
+                        <li><a href="Reto 8.html">Reto 8</a></li>
+                        <li><a href="Reto 9.html">Reto 9</a></li>
+                        <li><a href="Reto 10.html">Reto 10</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a>Fase 3</a>
+                    <ul class="menuvertical">
+                        <li><a href="Reto 11.html">Reto 11</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <form>
+            <h2>Datos personales</h2>
+            <p><label for="nombre">Nombre</label><br>
+            <input required type="text" id="nombre" name="nombre"></p>
+            <p><label for="apel">Apellidos</label><br>
+            <input required type="text" id="apel" name="apel"></p>
+            <p><label for="corr">Correo eléctronico</label><br>
+            <input required type="email" id="corr" name="corr"></p>
+            <p><label for="tele">Número de telefono</label><br>
+            <input required type="text" id="tele" name="tele"></p>
+            <p><label for="nord">Número de ordenadores</label><br>
+            <input requierd type="number" id="nord" name="nord"></p>
+            <p><label for="conexión">Tipo de conexión</label><br></p>
+            <p><select name="conexión">
+                <option value="cable">Por cable</option>
+                <option value="wi-fi">Wi-fi</option>
+                <option value="ambas">Por cable y Wi-Fi</option>
+            </select></p>
+            <p><label for="salas">Número de salas</label><br></p>
+            <p><select name="salas">
+                <option value="salas">1</option>
+                <option value="salas">2</option>
+                <option value="salas">3</option>
+                <option value="salas">4</option>
+                <option value="salas">5</option>
+                <option value="salas">6</option>
+                <option value="salas">7</option>
+                <option value="salas">8</option>
+                <option value="salas">9</option>
+                <option value="salas">10</option>
+            </select></p>
+            <p><label for="text">Comentarios</label><br>
+            <textarea cols="30" rows="10"></textarea><br></p>
+            <input type="submit" value="Enviar" />
+        </form>
+        <p>&nbsp;</p>
+    </body>
+    <footer class="foot">
+        <nav class="footer">
+                Centre d'estudis Politècnics
+                <a id="linkf" href="Formulario.html">Formulario</a>
+                <a href="https://www.labdoo.org/es/"><img id="lab" src="Imagenes/labdoo.png" width="40px" height="40px"></a>
+                <a href="https://politecnics.barcelona/"><img id="pol" src="Imagenes/politec.jpg" width="40px" height="40px"></a>
+        </nav>
+    </footer>
+</html>
